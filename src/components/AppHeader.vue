@@ -19,15 +19,19 @@ export default {
 
 <template>
     <header>
-        <div id="logo">
-            <img src="/images/logo.png" alt="">
 
-        </div>
+        <div id="header-container">
 
-        <div id="list">
-            <ul>
-                <li v-for="link in links">{{ link }}</li>
-            </ul>
+            <div id="logo">
+                <img src="/images/logo.png" alt="">
+
+            </div>
+
+            <div id="list">
+                <ul>
+                    <li v-for="link in links">{{ link }}</li>
+                </ul>
+            </div>
         </div>
     </header>
 </template>
@@ -37,25 +41,30 @@ header {
     width: 100vw;
     background-color: #f6f6f6;
 
-    display: flex;
-    flex-direction: row;
-    justify-content: space-around;
 
-    #list {
+    #header-container {
+        max-width: 1100px;
+        margin: 0 auto;
         display: flex;
         flex-direction: row;
-        align-items: center;
+        justify-content: space-between;
 
-        ul {
-            width: 100%;
+        #list {
             display: flex;
             flex-direction: row;
-            gap: 50px;
+            align-items: center;
 
-            color: black;
-            list-style-type: none;
-            text-transform: uppercase;
-            font-weight: bold;
+            ul {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                gap: 50px;
+
+                color: black;
+                list-style-type: none;
+                text-transform: uppercase;
+                font-weight: bold;
+            }
         }
     }
 }
