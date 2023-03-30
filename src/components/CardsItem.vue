@@ -36,8 +36,10 @@ export default {
     width: calc(100% / 4 - 20px / 4 * 3);
 
     .name {
-        font-size: 1em;
+        height: 50px;
+        font-size: 1.1em;
         font-weight: bold;
+        text-align: center;
     }
 
     .img {

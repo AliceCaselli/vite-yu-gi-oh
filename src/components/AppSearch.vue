@@ -17,7 +17,7 @@ export default {
 <template>
     <div id="research-bar">
 
-        <input v-model="store.searchWord" type="text" placeholder="Search a card">
+        <input v-model="store.searchWord" type="text" placeholder="Search a card" @keyup.enter="$emit('research')">
         <button id="search" @click="$emit('research')"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
 </template>

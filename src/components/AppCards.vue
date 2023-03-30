@@ -34,16 +34,30 @@ export default {
             // console.log(this.store.APIcall + this.store.APIquery + this.store.searchWord);
 
             let newApi = this.store.APIcall + this.store.APIquery + this.store.searchWord;
+            console.log(newApi);
 
-            axios.get(newApi).then((res) => {
+            if (this.store.searchWord != '') {
 
-                // console.log(res.data.data);
-                this.store.cards = res.data.data;
+                axios.get(newApi).then((res) => {
 
-            });
+                    console.log(res.data.data);
+                    this.store.cards = res.data.data;
+                    this.store.searchWord = '';
+                }).catch((err) => {
+
+                    alert('No match found');
+                    this.store.searchWord = '';
+
+                });
+            } else {
+                axios.get(this.store.APIcall).then((res) => {
+                    this.store.cards = res.data.data;
+
+                });
+            };
         },
     },
-};
+}
 
 
 </script>
@@ -62,6 +76,7 @@ export default {
     margin: 0 auto;
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
 }
 </style>
