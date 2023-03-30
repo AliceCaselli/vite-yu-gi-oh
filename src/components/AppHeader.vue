@@ -35,11 +35,7 @@ export default {
 
             </div>
 
-            <div id="research-bar">
 
-                <input type="text" placeholder="Search a card">
-                <button id="search"><i class="fa-solid fa-magnifying-glass"></i></button>
-            </div>
 
             <div id="list">
                 <ul>
@@ -65,21 +61,7 @@ header {
         justify-content: space-between;
         align-items: center;
 
-        #research-bar {
-            input {
-                padding: 5px;
-                border-radius: 10px;
-            }
 
-            #search {
-                padding: 5px 7px;
-                background-color: #242424;
-                color: #f6f6f6;
-                font-weight: bold;
-                border: 2px solid #242424;
-                border-radius: 10px;
-            }
-        }
 
         #list {
             display: flex;

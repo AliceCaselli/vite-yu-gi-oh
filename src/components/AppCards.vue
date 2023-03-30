@@ -3,7 +3,7 @@
 import { store } from "../store.js";
 import axios from "axios";
 import CardsItem from "./CardsItem.vue";
-
+import AppSearch from "./AppSearch.vue";
 export default {
     data() {
         return {
@@ -14,7 +14,7 @@ export default {
     },
 
     created() {
-        axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=50&offset=0').then((res) => {
+        axios.get(this.store.APIcall).then((res) => {
 
             // console.log(res.data.data);
 
@@ -26,15 +26,31 @@ export default {
 
     components: {
         CardsItem,
-    }
+        AppSearch,
+    },
+
+    methods: {
+        search() {
+            // console.log(this.store.APIcall + this.store.APIquery + this.store.searchWord);
+
+            let newApi = this.store.APIcall + this.store.APIquery + this.store.searchWord;
+
+            axios.get(newApi).then((res) => {
+
+                // console.log(res.data.data);
+                this.store.cards = res.data.data;
+
+            });
+        },
+    },
 };
 
 
 </script>
 
 <template>
+    <AppSearch @research="search()"></AppSearch>
     <div id="cards-container">
-
         <CardsItem v-for="card in store.cards" :card="card"></CardsItem>
 
     </div>
