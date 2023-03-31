@@ -1,8 +1,8 @@
 <script>
 
-name: 'AppHeader';
 
 export default {
+    name: 'AppHeader',
     data() {
         return {
 

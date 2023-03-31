@@ -11,5 +11,5 @@ export const store = reactive({
 
     searchWord: "",
 
-
+    isLoading: true,
 });

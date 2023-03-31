@@ -9,7 +9,6 @@ import { store } from "./store.js";
 export default {
   data() {
     return {
-
       store,
     };
   },
@@ -25,7 +24,7 @@ export default {
 
 <template>
   <AppHeader></AppHeader>
-  <!-- <AppLoader v-if="!store.cards.length > 0"></AppLoader> -->
+  <!-- <AppLoader ></AppLoader> -->
   <AppCards> </AppCards>
 </template>
 
