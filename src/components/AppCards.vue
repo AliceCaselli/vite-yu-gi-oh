@@ -4,6 +4,8 @@ import { store } from "../store.js";
 import axios from "axios";
 import CardsItem from "./CardsItem.vue";
 import AppSearch from "./AppSearch.vue";
+import AppCount from "./AppCount.vue";
+
 export default {
     data() {
         return {
@@ -27,6 +29,7 @@ export default {
     components: {
         CardsItem,
         AppSearch,
+        AppCount,
     },
 
     methods: {
@@ -64,6 +67,7 @@ export default {
 
 <template>
     <AppSearch @research="search()"></AppSearch>
+    <AppCount></AppCount>
     <div id="cards-container">
         <CardsItem v-for="card in store.cards" :card="card"></CardsItem>
 

@@ -1,8 +1,8 @@
 <script>
 
-name: 'CardsItem';
 
 export default {
+    name: 'CardsItem',
     data() {
         return {};
     },
